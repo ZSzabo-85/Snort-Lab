@@ -13,3 +13,8 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 - **Kali Linux** – Used as the attacker system to simulate web attacks and perform log analysis with Wireshark.
 - **Wireshark** – Used for packet capture of SCP file transfers and analysis of Snort logs.
 - **SSH/SCP** – Used to securely transfer Snort logs for analysis.
+
+## Attack Simulation:
+
+- Reflected Cross-Site Scripting (XSS)
+- Command Injection
