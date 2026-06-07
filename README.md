@@ -8,7 +8,7 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 
 ## Tools Used
 - **Ubuntu Server** – Configured as a router to forward traffic between segmented networks.
-- **Snort** – Deployed on Ubuntu Server as a Network Intrusion Detection System (NIDS) for traffic monitoring and log creation.
+- **Snort** – Deployed on Ubuntu Server as a Network Intrusion Detection System (NIDS) for monitoring traffic and generating logs.
 - **Metasploitable 2** – Vulnerable target machine hosting DVWA (Damn Vulnerable Web Application).
 - **Kali Linux** – Used as the attacker to simulate web attacks and perform log analysis with Wireshark.
 - **Wireshark** – Used for packet capture of SCP file transfers and analysing Snort logs.
