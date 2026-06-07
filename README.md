@@ -18,3 +18,27 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 
 - Reflected Cross-Site Scripting (XSS)
 - Command Injection
+
+## Network configuration 
+
+| Device | IP Address |
+|---|---|
+| Router | 192.168.80.1 & 192.168.90.1 |
+| Snort | 192.168.80.254 |
+| Metasploitable 2 | 192.168.80.10 |
+| Kali Linux Attacker| 192.168.90.5 |
+
+## Router Configuration
+To allow communication between the two networks, enable IP forwarding on the router.
+Edit the sysctl configuration file:
+```bash
+sudo nano /etc/sysctl.conf
+```
+Enable IPv4 forwarding by changing `net.ipv4.ip_forward=0` to `net.ipv4.ip_forward=1`.
+
+Apply the changes:
+```bash
+sudo sysctl -p
+```
+
+
