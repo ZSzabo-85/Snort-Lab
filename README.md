@@ -1,6 +1,6 @@
 # Snort-Lab
 
-Project Overview
+## Project Overview
 
 This small project demonstrates network traffic analysis and intrusion detection within a segmented lab environment. An attacker launches web application attacks against a vulnerable target machine while Snort is deployed as a Network Intrusion Detection System (NIDS) to monitor traffic traversing the target network and generate logs related to malicious activity.
 
@@ -19,14 +19,16 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 - Reflected Cross-Site Scripting (XSS)
 - Command Injection
 
-## Network configuration 
+## Network Configuration 
 
-| Device | IP Address |
-|---|---|
-| Router | 192.168.80.1 & 192.168.90.1 |
-| Snort | 192.168.80.254 |
-| Metasploitable 2 | 192.168.80.10 |
-| Kali Linux Attacker| 192.168.90.5 |
+| Device | IP Address | Default Gateway |
+|---|---|---|
+| Router | 192.168.80.1 & 192.168.90.1 | N/A | 
+| Snort | 192.168.80.254 | 192.168.80.1 |
+| Metasploitable 2 | 192.168.80.10 | 192.168.80.1 |
+| Kali Linux Attacker| 192.168.90.5 | 192.168.90.1 | 
+
+If devices configured correctly thye have to connect each other. **ping** command can be used to test connections,
 
 ## Router Configuration
 To allow communication between the two networks, enable IP forwarding on the router.
