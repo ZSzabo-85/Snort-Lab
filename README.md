@@ -28,7 +28,7 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 | Metasploitable 2 | 192.168.80.10 | 192.168.80.1 |
 | Kali Linux Attacker| 192.168.90.5 | 192.168.90.1 | 
 
-If devices configured correctly thye have to connect each other. **ping** command can be used to test connections,
+If devices configured correctly they should be able to communicate each other. **ping** command can be used to test connections.
 
 ## Router Configuration
 To allow communication between the two networks, enable IP forwarding on the router.
