@@ -54,21 +54,29 @@ Snort monitors 192.168.80.0/24 network and generate logs to /var/log/snort by de
 The following activities will be used to generate logs
 Using Kali web browser for  Command injection and XSS to DVWA hosted on Metasploitable.
 Kali web browser http://192.168.80.10 then select DVWA
+### XSS
 
-- XSS
-Select XSS Reflected then use payload as <script>alert(“THEPAYLOAD”)</script>
+Use payload as <script>alert(“THEPAYLOAD”)</script>
 
-- Command Injection
+![Reflected XSS payload submitted through DVWA](https://github.com/user-attachments/assets/9faefca9-c6e9-499f-a9f9-a3fabd2b4c26)
+
+![Result of XSS payload](https://github.com/user-attachments/assets/8c8b5068-4083-4e42-8ee9-c6c96052a948)
+
+
+
+
+### Command Injection
+
 Attacker submit the IP and ping work fine with no packet loss.
 
 Go further and submit some command with the ping
 Some commands attackers use:
-- whoami Current user
-- ls List files / directories in the current location
-- ip a list interfaces and IP addresses
-- cat /etc/passwd read local user accounts
-- hostname obtain system hostname
-- ps aux running processes
+- `whoami` - Current user
+- `ls` - List files / directories in the current location
+- `ip a` - list interfaces and IP addresses
+- `cat /etc/passwd` - read local user accounts
+- `hostname` - obtain system hostname
+- `ps aux` - running processes
 -  And more
 -  
 Whoami 
