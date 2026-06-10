@@ -96,8 +96,6 @@ The generated Snort logs were transferred from the Ubuntu Server to Kali Linux u
 
 ### SCP Packet Capture Analysis
 
-### SCP Packet Capture Analysis
-
 This capture shows an SSH session established between the Ubuntu Server (client) and Kali Linux (server) during SCP file transfer.
 
 Wireshark displays the SSHv2 handshake process, including key exchange and session establishment. After the handshake completes, all traffic is encrypted and appears as SSH “Encrypted packet” data.
