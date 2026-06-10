@@ -48,7 +48,7 @@ Start snort to monitor network traffic.
 ```bash
 sudo snort -A full -c /etc/snort/snort.conf -I enp0s8
 ```
-Snort monitors 192.168.80.0/24 network and generate logs to /var/log/snort by default if there is no path given.
+Snort monitors traffic within the 192.168.80.0/24 network and generates logs in /var/log/snort.
 
 ## Attack simulation
 The following activities will be used to generate logs
