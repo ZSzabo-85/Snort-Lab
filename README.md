@@ -104,3 +104,38 @@ This confirms that the Snort logs were securely transferred and are not visible 
 
 ![Wireshark showing SCP file transfer](https://github.com/user-attachments/assets/95fdb843-a3b6-4be1-8ac6-d33784ab30a5)
 
+### XSS Analysis
+
+HTTP GET requests can be filtered when analyzing web traffic:
+
+`http.request.method == "GET"`
+
+![Filter for GET request](https://github.com/user-attachments/assets/64a09c41-944d-459e-898e-248c584e45c3)
+
+
+This helps narrow down visible traffic to only GET requests. However, in environments with high volumes of network activity, this can still result in hundreds or thousands of packets, making manual analysis time-consuming.
+
+To improve detection efficiency, more specific filters can be applied to identify potential XSS-related patterns within request URIs.
+
+Another method to detect XSS payloads is by using a more precise regular expression filter:
+
+`http.request.uri matches "(?i)<script>|%3C|%253c"`
+
+This helps identify common encoded and non-encoded <script> tags.
+However, XSS attacks are not limited to <script> tags. Attackers may also use:
+
+-	alert()
+-	confirm()
+-	prompt()
+-	onerror
+-	onload
+-	onmouseover
+
+OR
+
+`http.request.uri matches "(?i)alert|prompt|confirm|onerror|script|%3C|%253C"`
+
+![using regex for XSS pattern](https://github.com/user-attachments/assets/f85b931c-fee9-40d1-91f2-b33e5aad32f5)
+
+
+**If these entries are detected, they should be investigated further to determine whether they represent malicious activity.**
