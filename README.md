@@ -139,3 +139,28 @@ OR
 
 
 **If these entries are detected, they should be investigated further to determine whether they represent malicious activity.**
+
+### Command Injection Analysis
+
+`http matches "(%26%26|%7c|%3b).*(whoami|id|ls|cat|passwd)"`
+
+This Wireshark display filter detects potential command injection attempts by identifying:
+
+- command chaining operators: &&, |, ;
+- Linux commands: whoami, id, ls, cat, passwd
+
+The filter identified malicious HTTP traffic containing command injection payloads submitted through user input.
+
+![Command injection](https://github.com/user-attachments/assets/0305614b-c9c0-4e36-abb1-8010cc170b57)
+
+
+**Indicators of Compromise (IOCs)**
+
+- Source IP: 192.168.90.5
+- Destination IP: 192.168.80.10
+- HTTP Method: POST
+- Vulnerable endpoint: /dvwa/vulnerabilities/exec/
+- Content-Type: application/x-www-form-urlencoded
+- Malicious payload: 127.0.0.1 && ip a && whoami
+
+ 
