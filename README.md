@@ -43,7 +43,7 @@ Apply the changes:
 sudo sysctl -p
 ```
 
-Start snort to monitor traffic 
+Start snort to monitor network traffic.
 
 ```bash
 sudo snort -A full -c /etc/snort/snort.conf -I enp0s8
