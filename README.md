@@ -66,10 +66,11 @@ Use payload as <script>alert(“THEPAYLOAD”)</script>
 
 ### Command Injection
 
-Attacker submit the IP and ping work fine with no packet loss.
+The attacker initially submitted a standard IP address to verify connectivity, which resulted in a successful ping response with no packet loss.
 
-Go further and submit some command with the ping
-Some commands attackers use:
+Further testing involved injecting additional system commands into the input field to observe whether they would be executed on the target system.
+
+Common commands can be used:
 - `whoami` - Current user
 - `ls` - List files / directories in the current location
 - `ip a` - list interfaces and IP addresses
