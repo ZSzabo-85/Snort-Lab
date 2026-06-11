@@ -63,7 +63,9 @@ Open the configuration file:
 ```bash
 sudo nano /etc/snort/snort.conf
 ```
-Set the HOME_NET variable:
+Configure the protected network
+
+Set the HOME_NET variable to match the network being protected:
 
 ipvar HOME_NET `192.168.80.0/24`
 
@@ -72,10 +74,10 @@ This tells Snort which network should be considered the protected internal netwo
 Enable Promiscuous Mode
 
 ```bash
-sudo ip link set eth0 promisc on
+sudo ip link set eth0s8 promisc on
 ```
 
-Configure the network interface connected to the monitored network to operate in promiscuous mode. This allows Snort to inspect all traffic visible on the network segment, rather than only traffic addressed to the sensor.
+This allows Snort to inspect all traffic on the network segment, rather than only traffic addressed to the sensor.
 
 Start snort to monitor network traffic.
 
