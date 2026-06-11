@@ -51,7 +51,7 @@ sudo snort -A full -c /etc/snort/snort.conf -I enp0s8
 Snort monitors traffic within the 192.168.80.0/24 network and generates logs in /var/log/snort.
 
 ## Attack simulation
-The following activities will be used to generate logs
+The following activities were used to generate logs
 Using Kali web browser for  Command injection and XSS to DVWA hosted on Metasploitable.
 Kali web browser http://192.168.80.10 then select DVWA
 
@@ -66,11 +66,11 @@ Use payload as <script>alert(“THEPAYLOAD”)</script>
 
 ### Command Injection
 
-The attacker initially submitted a standard IP address to verify connectivity, which resulted in a successful ping response with no packet loss.
+The attacker first submitted a standard IP address to verify connectivity, which resulted in a successful ping response with no packet loss.
 
 Further testing involved injecting additional system commands into the input field to observe whether they would be executed on the target system.
 
-Common commands can be used:
+Common commands:
 - `whoami` - Current user
 - `ls` - List files / directories in the current location
 - `ip a` - list interfaces and IP addresses
@@ -79,7 +79,7 @@ Common commands can be used:
 - `ps aux` - running processes
 -  And more
   
-**The followwing payloads were submitted**
+**The following payloads were submitted**
 
 - 127.0.0.1 && whoami 
 - 127.0.0.1 && ip a && whoami
