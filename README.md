@@ -74,7 +74,7 @@ This tells Snort which network should be considered the protected internal netwo
 Enable Promiscuous Mode
 
 ```bash
-sudo ip link set eth0s8 promisc on
+sudo ip link set enp0s8 promisc on
 ```
 
 This allows Snort to inspect all traffic on the network segment, rather than only traffic addressed to the sensor.
