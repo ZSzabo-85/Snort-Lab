@@ -199,4 +199,13 @@ The filter identified malicious HTTP traffic containing command injection payloa
 - Content-Type: application/x-www-form-urlencoded
 - Malicious payload: 127.0.0.1 && ip a && whoami
 
+## Key Takeaway
+
+- Snort successfully detected malicious web application traffic.
+- Command injection payloads were visible in HTTP POST requests.
+- XSS payloads were identified through URI analysis.
+- SSH/SCP traffic encrypted transfers and protected data in transit.
+- Packet analysis enabled identification of attacker source IP and attack techniques.
+
+
  
