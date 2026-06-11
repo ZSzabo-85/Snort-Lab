@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates network traffic analysis and intrusion detection within a segmented lab environment. An attacker launched web application attacks against a vulnerable target machine while Snort is deployed as a Network Intrusion Detection System (NIDS) to monitor traffic traversing the target network and generate logs related to malicious activity.
+This project demonstrates network traffic analysis and intrusion detection within a segmented lab environment. An attacker launched web application attacks against a vulnerable target machine while Snort was deployed as a Network Intrusion Detection System (NIDS) to monitor traffic traversing the target network and generate logs related to malicious activity.
 
 Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for further investigation using Wireshark. The project highlights network traffic monitoring, IDS logging, packet analysis, and identification of common web attack indicators.
 
@@ -40,7 +40,7 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 | Metasploitable 2 | 192.168.80.10 | 192.168.80.1 |
 | Kali Linux Attacker| 192.168.90.5 | 192.168.90.1 | 
 
-If devices configured correctly they should be able to communicate each other. **ping** command can be used to test connections.
+If the devices are configured correctly they should be able to communicate with each other. **ping** command can be used to test connections.
 
 ## Router Configuration
 To allow communication between the two networks, enable IP forwarding on the router.
@@ -79,7 +79,7 @@ sudo ip link set eth0s8 promisc on
 
 This allows Snort to inspect all traffic on the network segment, rather than only traffic addressed to the sensor.
 
-Start snort to monitor network traffic.
+Start Snort to monitor network traffic.
 
 ```bash
 sudo snort -A full -c /etc/snort/snort.conf -i enp0s8
@@ -89,7 +89,7 @@ Snort monitors traffic within the 192.168.80.0/24 network and generates logs in 
 ## Attack simulation
 The following activities were used to generate logs
 Using Kali web browser for  Command injection and XSS to DVWA hosted on Metasploitable.
-Kali web browser http://192.168.80.10 then select DVWA
+Browse to http://192.168.80.10 from Kali Linux then select DVWA.
 
 **Note:** Snort was stopped and restarted between the XSS and Command Injection tests. This created separate log files for each attack scenario, making it easier to analyse and correlate events during the investigation process.
 ### XSS
@@ -109,7 +109,7 @@ Further testing involved injecting additional system commands into the input fie
 Common commands:
 - `whoami` - Current user
 - `ls` - List files / directories in the current location
-- `ip a` - list interfaces and IP addresses
+- `ip a` - List interfaces and IP addresses
 - `cat /etc/passwd` - read local user accounts
 - `hostname` - obtain system hostname
 - `ps aux` - running processes
