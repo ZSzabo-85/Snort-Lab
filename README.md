@@ -19,6 +19,18 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 - Reflected Cross-Site Scripting (XSS)
 - Command Injection
 
+## Table of Content
+
+- [Network Configuration](#network-configuration)
+- [Router Configuration](#router-configuration)
+- [Snort Configuration](#snort-configuration)
+- [Log Analysis](#log-analysis)
+  - [SCP Packet Capture Analysis](#scp-packet-capture-analysis)
+  - [XSS Analysis](#xss-analysis)
+  - [Command Injection Analysis](#command-injection-analysis)
+- [Indicators of Compromise (IOCs)](#indicators-of-compromise-iocs)
+
+
 ## Network Configuration 
 
 | Device | IP Address | Default Gateway |
@@ -42,11 +54,33 @@ Apply the changes:
 ```bash
 sudo sysctl -p
 ```
+## Snort Configuration
+
+After installing Snort, configure the monitored network in the Snort configuration file.
+
+Open the configuration file:
+
+```bash
+sudo nano /etc/snort/snort.conf
+```
+Set the HOME_NET variable:
+
+ipvar HOME_NET `192.168.80.0/24`
+
+This tells Snort which network should be considered the protected internal network.
+
+Enable Promiscuous Mode
+
+```bash
+sudo ip link set eth0 promisc on
+```
+
+Configure the network interface connected to the monitored network to operate in promiscuous mode. This allows Snort to inspect all traffic visible on the network segment, rather than only traffic addressed to the sensor.
 
 Start snort to monitor network traffic.
 
 ```bash
-sudo snort -A full -c /etc/snort/snort.conf -I enp0s8
+sudo snort -A full -c /etc/snort/snort.conf -i enp0s8
 ```
 Snort monitors traffic within the 192.168.80.0/24 network and generates logs in /var/log/snort.
 
