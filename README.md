@@ -190,7 +190,7 @@ The filter identified malicious HTTP traffic containing command injection payloa
 ![Command injection](https://github.com/user-attachments/assets/0305614b-c9c0-4e36-abb1-8010cc170b57)
 
 
-**Indicators of Compromise (IOCs)**
+## Indicators of Compromise (IOCs)
 
 - Source IP: 192.168.90.5
 - Destination IP: 192.168.80.10
