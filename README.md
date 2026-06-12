@@ -20,7 +20,7 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
 - Command Injection
 
 ## Table of Content
-
+- [Network Diagram](#network-diagram)
 - [Network Configuration](#network-configuration)
 - [Router Configuration](#router-configuration)
 - [Snort Configuration](#snort-configuration)
@@ -30,6 +30,10 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
   - [Command Injection Analysis](#command-injection-analysis)
 - [Indicators of Compromise (IOCs)](#indicators-of-compromise-iocs)
 - [Key Takeaway](#key-takeaway)
+
+## Network Diagram
+
+![Network Diagram](https://github.com/user-attachments/assets/cc4e75bf-0672-4628-8010-887d70f24bb3)
 
 
 ## Network Configuration 
