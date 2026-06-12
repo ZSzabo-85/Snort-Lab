@@ -29,6 +29,7 @@ Generated Snort logs were securely transferred over SSH/SCP to Kali Linux for fu
   - [XSS Analysis](#xss-analysis)
   - [Command Injection Analysis](#command-injection-analysis)
 - [Indicators of Compromise (IOCs)](#indicators-of-compromise-iocs)
+- [Key Takeaway](#key-takeaway)
 
 
 ## Network Configuration 
