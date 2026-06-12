@@ -205,7 +205,7 @@ The filter identified malicious HTTP traffic containing command injection payloa
 - Command injection payloads were visible in HTTP POST requests.
 - XSS payloads were identified through URI analysis.
 - SSH/SCP traffic encrypted transfers and protected data in transit.
-- Packet analysis enabled identification of attacker source IP and attack techniques.
+- Packet analysis helped to identify malicious IP address
 
 
  
